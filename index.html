@@ -46,7 +46,6 @@
     }
     function searchData() {
        
-        result.innerHTML=" "
         city = scity.value
         fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=5fe36b192ffd1c36dffb6752bc1722b2`).then(data => data.json()).then(data=>displayData(data))
    
