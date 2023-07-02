@@ -13,16 +13,16 @@
 <body style="background-color:#4aa9bb;">
     <div class="p-2 mt-2 ">
         <h1 class="text-center">Check Weather</h1>
-        <form class="container w-50 text-center">
+        <form class="container text-center">
             <input type="text" placeholder="Enter City Name" autocomplete="off" id="scity">
             <button type="button" onclick="searchData()" class="btn btn-danger">Search</button>
-             <!-- <button type="button" onclick="ClearData()" class="btn btn-danger"><i
-                class="fa-solid fa-rotate"></i></button> -->
+           <button type="button" onclick="ClearData()" class="btn btn-warning"><i
+                class="fa-solid fa-rotate"></i></button>
 
 
         </form>
     </div>
-    <div class=" w-50 container">
+    <div class="container">
         <div class="row">
         <div class="col-md-6"><img src="./img.jpg" class="card-img-top" alt="..."></div>
         <div class="col-md-6">
@@ -39,6 +39,11 @@
 
 </body>
 <script>
+    unction ClearData()
+    {
+        result.innerHTML=" "  
+        scity.value=" "
+    }
     function searchData() {
        
         result.innerHTML=" "
