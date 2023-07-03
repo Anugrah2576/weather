@@ -10,7 +10,8 @@
     <script src="https://kit.fontawesome.com/9be2a36e8a.js" crossorigin="anonymous"></script>
 </head>
 
-<body class="container" style="background-color:#4aa9bb;">
+<body  style="background-color:#4aa9bb;">
+    <div class="container">
     <div class="row  mt-2">
         <h1 class="text-center">Check Weather</h1>
         <form class="container w-50 text-center">
@@ -22,10 +23,10 @@
 
         </form>
     </div>
-    <div class="">
+    
         <div class="row">
         <div class="col-md-6"><img src="./img.jpg" width="100%" alt="..."></div>
-        <div class="col-md-6">
+        <div class="col-md-6 text-center">
         
           <h3 class="text-center">Weather Details</h3>
           
@@ -35,18 +36,18 @@
 </div>
       </div>  
       </div>
-      </div>
-
+      
+    </div>
 </body>
 <script>
-    
-   function ClearData()
+    function ClearData()
     {
         result.innerHTML=" "  
         scity.value=" "
     }
     function searchData() {
        
+        result.innerHTML=" "
         city = scity.value
         fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=5fe36b192ffd1c36dffb6752bc1722b2`).then(data => data.json()).then(data=>displayData(data))
    
@@ -67,13 +68,15 @@
 
         
             result.innerHTML=`<div class="col-6">
+               
             <ul  class="list-group list-group-flush">
            <li class="list-group-item">Country  : ${cname}</li>
           <li class="list-group-item">Humidity : ${humidity}%</li>
           <li class="list-group-item">Wind     : ${wind}Kmph</li>
           <li class="list-group-item">Pressure : ${pressure}</li>
-        </ul>    
-        </div>  <div   class="col-6"><h2>${name}</h2>
+        </ul>  
+        </div>  <div   class="col-6">
+           <h2>${name}</h2>
           <h4>${ctemp} \u00B0C</h4> <h6>${des}</h6>
           <p>Feels like ${feels} \u00B0C<p>
             <p>${d}<p></div>`
