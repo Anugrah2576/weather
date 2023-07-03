@@ -11,10 +11,10 @@
 </head>
 
 <body style="background-color:#4aa9bb;">
-    <div class="p-2 mt-2 ">
+    <div class="p-2 mt-2 container">
         <h1 class="text-center">Check Weather</h1>
         <form class="container text-center">
-            <input type="text" placeholder="Enter City Name" autocomplete="off" id="scity">
+            <input type="text" onkeypress="mykey(event)" placeholder="Enter City Name" autocomplete="off" id="scity">
             <button type="button" onclick="searchData()" class="btn btn-danger">Search</button>
            <button type="submit" onclick="ClearData()" class="btn btn-warning"><i
                 class="fa-solid fa-rotate"></i></button>
@@ -24,8 +24,8 @@
     </div>
     <div class="container">
         <div class="row">
-        <div class="col-md-6"><img src="./img.jpg" class="card-img-top" alt="..."></div>
-        <div class="col-md-6">
+        <div class="col-6"><img src="./img.jpg" class="card-img-top" alt="..."></div>
+        <div class="col-6">
         <div class="card-body">
           <h3 class="card-title text-center">Weather Details</h3>
           
@@ -39,6 +39,13 @@
 
 </body>
 <script>
+    function mykey(event){
+        x=event.code
+        if(x=="Enter")
+        {
+         ClearData()   
+        }
+    }
    function ClearData()
     {
         result.innerHTML=" "  
